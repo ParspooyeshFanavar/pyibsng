@@ -2,6 +2,8 @@
 
 This library will provide you access on API of IBSng.
 
+> **NOTE:** This project is under construction, some handlers work fine, but some others are under the development. 
+
 ### Support
 * Python 2.7.x
 * Python 3.x.x

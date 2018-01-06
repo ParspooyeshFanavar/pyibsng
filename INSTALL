@@ -1,0 +1,9 @@
+Thanks for downloading pyibsng.
+
+To install it, make sure that you have Python 2.7 or 3.x and then
+run this command to install it:
+
+	$ python setup.py install
+
+If you want to upgrade from previus version, first remove the
+old one and then install the new version.

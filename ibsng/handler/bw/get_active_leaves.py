@@ -1,17 +1,18 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Get active leaves API method."""
 from ibsng.handler.handler import Handler
 
 
 class getActiveLeaves(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Get active leaves class."""
 
-    def setup(self, **kwargs):
+    def setup(self, order_by, desc):
         """Setup required parameters.
 
-        :param dict kwargs: input args
+        :param str order_by: order by a specific field
+        :param bool desc: order of result
 
-        :return: void
-        :rtype: void
+        :return: None
+        :rtype: None
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        self.order_by = order_by
+        self.desc = desc

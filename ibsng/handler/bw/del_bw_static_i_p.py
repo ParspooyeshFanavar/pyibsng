@@ -1,16 +1,16 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Delete bandwidth static IP API method."""
 from ibsng.handler.handler import Handler
 
 
 class delBwStaticIP(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Delete bandwidth static IP class."""
 
     def setup(self, ip_addr):
         """Setup required parameters.
 
-        :param str ip_addr: 
-    
-        :return: void
-        :rtype: void
+        :param str ip_addr: IP address
+
+        :return: None
+        :rtype: None
         """
         self.ip_addr = ip_addr

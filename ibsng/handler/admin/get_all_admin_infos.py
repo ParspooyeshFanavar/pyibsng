@@ -1,16 +1,17 @@
-""" info API method."""
+"""Get info of all admins API method."""
 from ibsng.handler.handler import Handler
 
 
 class getAllAdminInfos(Handler):
-    """ info method class."""
+    """Get info of all admins class."""
 
-    def setup(self, isp_name):
+    def setup(self, isp_name=None):
         """Setup required parameters.
 
         :param str isp_name: admins of specific ISP
-    
-        :return: void
-        :rtype: void
+
+        :return: None
+        :rtype: None
         """
-        self.isp_name = isp_name
+        if isp_name:
+            self.isp_name = isp_name

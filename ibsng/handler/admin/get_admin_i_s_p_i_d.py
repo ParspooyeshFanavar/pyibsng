@@ -1,9 +1,9 @@
-"""Delete an admin API method."""
+"""Get ISP of an admin AIP method."""
 from ibsng.handler.handler import Handler
 
 
-class deleteAdmin(Handler):
-    """Delete an admin class."""
+class getAdminISPID(handler):
+    """Get ISP ID of an admin class."""
 
     def setup(self, admin_username):
         """Setup required parameters.

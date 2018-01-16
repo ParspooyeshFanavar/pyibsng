@@ -15,10 +15,7 @@ def serialize(data):
     :rtype: str
     :raises ValueError: raise ValueError when can't dump dict
     """
-    try:
-        return json.dumps(data)
-    except:
-        raise ValueError("Serialize failed. Invalid data.")
+    return json.dumps(data)
 
 
 def deserialize(data):
@@ -32,7 +29,7 @@ def deserialize(data):
     """
     try:
         return json.loads(data)
-    except:
+    except (json.JSONDecodeError, TypeError):
         raise ValueError("Deserialize failed. Invalid data.")
 
 

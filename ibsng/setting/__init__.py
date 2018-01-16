@@ -1,0 +1,1 @@
+"""Default and basic variables."""

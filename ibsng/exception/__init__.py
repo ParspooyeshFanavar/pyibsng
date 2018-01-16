@@ -1,1 +1,1 @@
-
+"""Exception handler library."""

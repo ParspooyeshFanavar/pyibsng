@@ -8,6 +8,7 @@ from ibsng.setting import session as session_settings
 
 class Session:
     """Session handler class."""
+
     _is_instance = None
 
     def __init__(self):

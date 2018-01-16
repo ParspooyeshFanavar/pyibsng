@@ -42,5 +42,5 @@ class Request:
         # Convert server response to object
         try:
             return hash.deserialize(result.text)
-        except:
+        except Exception:
             raise ValueError("Convert server response failed.")

@@ -42,7 +42,7 @@ def connection_string_parser(conn_str):
             'login_auth_pass': user_info[user_info.find(':')+1:],
         }
         return (auth_params, server_url)
-    except:
+    except Exception:
         raise connection.InvalidConnectionString()
 
 

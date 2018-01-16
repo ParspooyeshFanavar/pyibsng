@@ -1,22 +1,23 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Add new node API method."""
 from ibsng.handler.handler import Handler
 
 
 class addNode(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Add new node class."""
 
-    def setup(self, hostname, interface_name, parent_id, rate_kbits, ceil_kbits, priority):
+    def setup(self, hostname, interface_name, parent_id,
+              rate_kbits, ceil_kbits, priority):
         """Setup required parameters.
 
-        :param str hostname: 
-        :param str interface_name: 
-        :param int parent_id: 
+        :param str hostname: host name
+        :param str interface_name: interface name
+        :param int parent_id: parent node
         :param int rate_kbits: kilo bits
         :param int ceil_kbits: kilo bits
-        :param int priority: 
-    
-        :return: void
-        :rtype: void
+        :param int priority: node priority
+
+        :return: None
+        :rtype: None
         """
         self.hostname = hostname
         self.interface_name = interface_name

@@ -7,7 +7,7 @@ from .session import Session
 from ibsng.util import string, file_dir
 from ibsng.setting import auth as auth_setting
 from ibsng.setting import default as default_setting
-from ibsng.exception import exception, handler, method
+from ibsng.exception import exception, handler_exception, method
 from ibsng import handler
 from ibsng.util import hash
 
@@ -132,7 +132,8 @@ class Connection:
             if self._r_steps == 2:
                 # Check handler existance
                 if not file_dir.is_handler_exist(self._r_handler_name):
-                    raise handler.ImportHandlerNotFound(self._r_handler_name)
+                    raise handler_exception.\
+                            ImportHandlerNotFound(self._r_handler_name)
 
                 # Check method existance
                 if not file_dir.is_method_exist(self._r_handler_name,

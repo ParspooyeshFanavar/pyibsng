@@ -1,18 +1,18 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Delete interface API method."""
 from ibsng.handler.handler import Handler
 
 
 class delInterface(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Delete interface class."""
 
     def setup(self, hostname, interface_name):
         """Setup required parameters.
 
-        :param str hostname: 
-        :param str interface_name: 
-    
-        :return: void
-        :rtype: void
+        :param str hostname: host name
+        :param str interface_name: interface name
+
+        :return: None
+        :rtype: None
         """
         self.hostname = hostname
         self.interface_name = interface_name

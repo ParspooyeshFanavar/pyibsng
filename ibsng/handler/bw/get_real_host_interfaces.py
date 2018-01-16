@@ -1,18 +1,18 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Get real host interfaces API method."""
 from ibsng.handler.handler import Handler
 
 
 class getRealHostInterfaces(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Get real host interfaces class."""
 
     def setup(self, hostname, host_type):
         """Setup required parameters.
 
-        :param str hostname: 
-        :param choice host_type: 
-    
-        :return: void
-        :rtype: void
+        :param str hostname: host name
+        :param str host_type: host type(Linux, Mikrotik)
+
+        :return: None
+        :rtype: None
         """
         self.hostname = hostname
         self.host_type = host_type

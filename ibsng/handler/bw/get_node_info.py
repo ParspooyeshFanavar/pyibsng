@@ -1,16 +1,16 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Get node info API method."""
 from ibsng.handler.handler import Handler
 
 
 class getNodeInfo(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Get node info class."""
 
     def setup(self, node_id):
         """Setup required parameters.
 
-        :param int node_id: 
-    
-        :return: void
-        :rtype: void
+        :param int node_id: node ID
+
+        :return: None
+        :rtype: None
         """
         self.node_id = node_id

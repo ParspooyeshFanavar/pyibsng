@@ -1,17 +1,13 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Get all bandwidth static IP API method."""
 from ibsng.handler.handler import Handler
 
 
 class getAllBwStaticIPs(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Get all bandwidth static IP class."""
 
-    def setup(self, **kwargs):
+    def setup(self):
         """Setup required parameters.
 
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
+        :return: None
+        :rtype: None
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)

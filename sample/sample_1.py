@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from ibsng import IBSng
 
 # Connect and authenticate
-conn = IBSng("myusername:mypassword@http://192.168.1.1:1237")
+conn = IBSng("system:sys@http://172.17.0.2:1237")
 conn.auth()
 
 # Call method

@@ -1,24 +1,25 @@
-"""bandwidth limit, based on tag C_lan_acc_staging_327 info API method."""
+"""Update leaf API method."""
 from ibsng.handler.handler import Handler
 
 
 class updateLeaf(Handler):
-    """bandwidth limit, based on tag C_lan_acc_staging_327 info method class."""
+    """Update leaf class."""
 
-    def setup(self, leaf_id, leaf_name, default_rate_kbits, default_ceil_kbits, total_rate_kbits, total_ceil_kbits, default_priority, total_priority):
+    def setup(self, leaf_id, leaf_name, default_rate_kbits, default_ceil_kbits,
+              total_rate_kbits, total_ceil_kbits, default_priority, total_priority):
         """Setup required parameters.
 
-        :param int leaf_id: 
-        :param str leaf_name: 
-        :param int default_rate_kbits: kilo bits
-        :param int default_ceil_kbits: kilo bits
-        :param int total_rate_kbits: kilo bits
-        :param int total_ceil_kbits: kilo bits
-        :param int default_priority: 
-        :param int total_priority: 
-    
-        :return: void
-        :rtype: void
+        :param int leaf_id: leaf ID
+        :param str leaf_name: new leaf name
+        :param int default_rate_kbits: new kilo bits
+        :param int default_ceil_kbits: new kilo bits
+        :param int total_rate_kbits: new kilo bits
+        :param int total_ceil_kbits: new kilo bits
+        :param int default_priority: new default priority
+        :param int total_priority: new total priority
+
+        :return: None
+        :rtype: None
         """
         self.leaf_id = leaf_id
         self.leaf_name = leaf_name

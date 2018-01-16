@@ -1,22 +1,23 @@
-""" info API method."""
+"""Add new admin API method."""
 from ibsng.handler.handler import Handler
 
 
 class addNewAdmin(Handler):
-    """ info method class."""
+    """Add new admin class."""
 
-    def setup(self, admin_username, admin_password, admin_isp_name, name, email, comment, admin_has_otp, admin_request_limit):
+    def setup(self, admin_username, admin_password, admin_isp_name, name,
+              email, comment, admin_has_otp, admin_request_limit):
         """Setup required parameters.
 
-        :param str admin_username: 
-        :param str admin_password: 
-        :param str admin_isp_name: 
-        :param str name: 
-        :param str email: 
-        :param str comment: 
-        :param bool admin_has_otp: 
-        :param int admin_request_limit: 
-    
+        :param str admin_username: admin authentication username
+        :param str admin_password: admin authentication password
+        :param str admin_isp_name: admin isp name
+        :param str name: admin real name
+        :param str email: admin email
+        :param str comment: comment about this action
+        :param bool admin_has_otp: has admin otp
+        :param int admin_request_limit: limitation on admin requests
+
         :return: void
         :rtype: void
         """

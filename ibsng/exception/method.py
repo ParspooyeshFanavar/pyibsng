@@ -46,3 +46,38 @@ class ImportMethodError(IBSngException):
         """
         message = "Import {} method in driver got error.".format(method_name)
         super(ImportMethodError, self).__init__(message)
+
+
+class InvalidArgumentType(IBSngException):
+    """Raise when method argument type is incorrect."""
+
+    _err_code = 304
+
+    def __init__(self, method_name, argument_value, argument_type):
+        """Raise when method argument type is incorrect.
+
+        :param str method_name: method name
+        :param str argument_value: argument value
+        :param str argument_type: argument type
+        """
+        message = "Method '{}' got incorrect argument type: '{}' ({})".\
+                  format(method_name, argument_value, argument_type.__name__)
+        super(InvalidArgumentType, self).__init__(message)
+
+
+class InvalidArgumentValue(IBSngException):
+    """Raise when method argument value is incorrect."""
+
+    _err_code = 305
+
+    def __init__(self, method_name, argument_value, valid_values):
+        """Raise when method argument value is incorrect.
+
+        :param str method_name: method name
+        :param type argument_value: argument data
+        :param type valid_values: list of valid values which argument_value
+                                  should be in.
+        """
+        message = "Method '{}' got incorrect argument type: '{}' ({})".\
+                  format(method_name, argument_value, valid_values)
+        super(InvalidArgumentValue, self).__init__(message)

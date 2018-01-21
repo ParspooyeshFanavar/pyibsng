@@ -5,16 +5,28 @@ from ibsng.handler.handler import Handler
 class bulkChangeUserDeposit(Handler):
     """ info method class."""
 
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.conds, dict)
+        self.is_valid(self.deposit, float)
+        self.is_valid(self.change_type, str)
+        self.is_valid_content(self.change_type, ["ADD", "SET", "MULTIPLY"])
+        self.is_valid(self.deposit_comment, str)
+
     def setup(self, conds, deposit, change_type, deposit_comment):
         """Setup required parameters.
 
-        :param dict conds: the same as method 'user.searchUser', parameter 'conds'
-        :param float deposit: the same as method 'user.changeDepositExtended'
-        :param choice change_type: the same as method 'user.changeDepositExtended'
-        :param str deposit_comment: the same as method 'user.changeDepositExtended'
-    
-        :return: void
-        :rtype: void
+        :param dict conds: conditions
+        :param float deposit: initialize deposit
+        :param str change_type: change action type
+        :param str credit_comment: comment for credit
+
+        :return: None
+        :rtype: None
         """
         self.conds = conds
         self.deposit = deposit

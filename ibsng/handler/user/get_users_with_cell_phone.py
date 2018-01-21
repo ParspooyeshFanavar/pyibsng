@@ -1,16 +1,24 @@
-""" info API method."""
+"""Get users by cellphone API method."""
 from ibsng.handler.handler import Handler
 
 
 class getUsersWithCellPhone(Handler):
-    """ info method class."""
+    """Get users by cellphone method class."""
+
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.cell_phone, str)
 
     def setup(self, cell_phone):
         """Setup required parameters.
 
-        :param str cell_phone: 
-    
-        :return: void
-        :rtype: void
+        :param str cell_phone: ibsng users cell phone
+
+        :return: None
+        :rtype: None
         """
         self.cell_phone = cell_phone

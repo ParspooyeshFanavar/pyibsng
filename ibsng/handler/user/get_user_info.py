@@ -5,11 +5,28 @@ from ibsng.handler.handler import Handler
 class getUserInfo(Handler):
     """Get user info class."""
 
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        if hasattr(self, "user_id"):
+            self.is_valid(self.user_id, str)
+        if hasattr(self, "normal_username"):
+            self.is_valid(self.normal_username, str)
+        if hasattr(self, "voip_username"):
+            self.is_valid(self.voip_username, str)
+        if hasattr(self, "serial"):
+            self.is_valid(self.serial, str)
+        if hasattr(self, "phone"):
+            self.is_valid(self.phone, str)
+
     def setup(self, user_id=None, normal_username=None,
               voip_username=None, serial=None, phone=None):
         """Setup required parameters.
 
-        :param str user_id: IBSng user id
+        :param int user_id: ibsng user id
         :param str normal_username: authentication username
         :param str voip_username: voip username
         :param str serial: serial code
@@ -19,7 +36,7 @@ class getUserInfo(Handler):
         :rtype: None
         """
         if user_id:
-            self.user_id = user_id
+            self.user_id = str(user_id)
         elif normal_username:
             self.normal_username = normal_username
         elif voip_username:

@@ -5,7 +5,7 @@ from ibsng.handler.handler import Handler
 class listGroupInfos(Handler):
     """ info method class."""
 
-    def setup(self, active_only=None, isp_id):
+    def setup(self, isp_id, active_only=None):
         """Setup required parameters.
 
         :param bool active_only: pass true if you only want active groups

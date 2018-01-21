@@ -1,22 +1,34 @@
-""" info API method."""
+"""Kill user API method."""
 from ibsng.handler.handler import Handler
 
 
 class killUser(Handler):
-    """ info method class."""
+    """Kill user method class."""
 
-    def setup(self, user_id, ras_ip, unique_id_val, kill=None):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.user_id, str)
+        self.is_valid(self.ras_ip, str)
+        self.is_valid(self.unique_id_val, str)
+        self.is_valid(self.kill, bool)
+
+    def setup(self, user_ids, ras_ips, unique_id_val, kill=False):
         """Setup required parameters.
 
-        :param str user_id: comma-seperated User IDs
-        :param str ras_ip: comma-seperated RAS IPs
-        :param str unique_id_val: Unique ID Value (for exmaple Port, Caller ID, etc)
-        :param bool kill: true means Kill User, false means Clear User
-    
-        :return: void
-        :rtype: void
+        :param list user_id: ibsng user ids
+        :param list ras_ips: ras ips
+        :param str unique_id_val: unique id value (for exmaple port, caller id,
+                                  etc)
+        :param bool kill: true means 'Kill User', false means 'Clear User'
+
+        :return: None
+        :rtype: None
         """
-        self.user_id = user_id
-        self.ras_ip = ras_ip
+        self.user_id = ",".join(map(str, user_ids))
+        self.ras_ip = ",".join(map(str, ras_ips))
         self.unique_id_val = unique_id_val
         self.kill = kill

@@ -18,3 +18,12 @@ class IBSngException(Exception):
                                         message,
                                         self._err_code)
         super(IBSngException, self).__init__(message)
+
+    @property
+    def error_code(self):
+        """Return exception error code.
+
+        :return: exception error code
+        :rtype: int
+        """
+        return self._err_code

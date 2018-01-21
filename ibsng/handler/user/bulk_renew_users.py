@@ -1,18 +1,27 @@
-""" info API method."""
+"""Bulk action to renew user API method."""
 from ibsng.handler.handler import Handler
 
 
 class bulkRenewUsers(Handler):
-    """ info method class."""
+    """Bulk action to renew user method class."""
 
-    def setup(self, conds, renew_comment):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.conds, dict)
+        self.renew_comment(self.renew_comment, str)
+
+    def setup(self, conds, renew_comment=""):
         """Setup required parameters.
 
-        :param dict conds: the same as method 'user.searchUser', parameter 'conds'
-        :param str renew_comment: the same as method 'user.renewUsers', parameter 'comment'
-    
-        :return: void
-        :rtype: void
+        :param dict conds: conditions
+        :param str renew_comment: comment for this action
+
+        :return: None
+        :rtype: None
         """
         self.conds = conds
         self.renew_comment = renew_comment

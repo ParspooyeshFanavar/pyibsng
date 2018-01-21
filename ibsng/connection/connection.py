@@ -7,7 +7,7 @@ from .session import Session
 from ibsng.util import string, file_dir
 from ibsng.setting import auth as auth_setting
 from ibsng.setting import default as default_setting
-from ibsng.exception import exception, handler_exception, method
+from ibsng.exception import exception, handler as handler_exception, method
 from ibsng import handler
 from ibsng.util import hash
 
@@ -104,7 +104,7 @@ class Connection:
         """
         action = self._request.send(method, **params)
         if action.get("error"):
-            raise exception.throw_exception(action.error)
+            raise exception.throw_exception(action["error"])
         return action
 
     def __getattr__(self, api_name):

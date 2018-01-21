@@ -1,18 +1,27 @@
-""" info API method."""
+"""Bulk action to kill user API method."""
 from ibsng.handler.handler import Handler
 
 
 class bulkKillUsers(Handler):
-    """ info method class."""
+    """Bulk action to kill user method class."""
+
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.conds, dict)
+        self.is_valid(self.kill, bool)
 
     def setup(self, conds, kill=None):
         """Setup required parameters.
 
-        :param dict conds: the same as method 'user.searchUser', parameter 'conds'
-        :param bool kill: true means Kill User, false means Clear User
-    
-        :return: void
-        :rtype: void
+        :param dict conds: conditions
+        :param bool kill: True means 'Kill User', False means 'Clear User'
+
+        :return: None
+        :rtype: None
         """
         self.conds = conds
         self.kill = kill

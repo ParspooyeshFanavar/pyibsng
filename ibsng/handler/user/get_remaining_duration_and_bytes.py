@@ -1,17 +1,26 @@
-""" info API method."""
+"""Get remain duration and bytes API method."""
 from ibsng.handler.handler import Handler
 
 
 class getRemainingDurationAndBytes(Handler):
-    """ info method class."""
+    """Get remain duration and bytes method class."""
 
-    def setup(self, **kwargs):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        if hasattr(self, "user_id"):
+            self.is_valid(self.user_id, int)
+
+    def setup(self, user_id=None):
         """Setup required parameters.
 
-        :param dict kwargs: input args
+        :param int user_id: ibsng user id
 
-        :return: void
-        :rtype: void
+        :return: None
+        :rtype: None
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        if user_id:
+            self.user_id = user_id

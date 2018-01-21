@@ -1,16 +1,25 @@
-""" info API method."""
+"""Reload users API method."""
 from ibsng.handler.handler import Handler
 
 
 class reloadUsers(Handler):
-    """ info method class."""
+    """Reload users method class."""
 
-    def setup(self, user_id):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.user_id, str)
+        self.is_valid_content(self.user_id, str)
+
+    def setup(self, user_ids):
         """Setup required parameters.
 
-        :param str user_id: 
-    
-        :return: void
-        :rtype: void
+        :param list user_ids: ibsng user ids
+
+        :return: None
+        :rtype: None
         """
-        self.user_id = user_id
+        self.user_id = ",".join(map(str, user_ids))

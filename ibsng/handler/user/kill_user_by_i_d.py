@@ -1,17 +1,25 @@
-""" info API method."""
+"""Kill user by ids info API method."""
 from ibsng.handler.handler import Handler
 
 
 class killUserByID(Handler):
-    """ info method class."""
+    """Kill user by ids method class."""
 
-    def setup(self, **kwargs):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.user_id, str)
+        self.is_valid_content(self.user_id)
+
+    def setup(self, user_ids):
         """Setup required parameters.
 
-        :param dict kwargs: input args
+        :param list user_ids: list of ibsng user ids
 
-        :return: void
-        :rtype: void
+        :return: None
+        :rtype: None
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        self.user_id = ",".join(map(str, user_ids))

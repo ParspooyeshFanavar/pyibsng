@@ -1,22 +1,35 @@
-""" info API method."""
+"""Add new user API method."""
 from ibsng.handler.handler import Handler
 
 
 class addNewUsers(Handler):
-    """ info method class."""
+    """Add new user method class."""
+
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.count, int)
+        self.is_valid(self.credit, float)
+        self.is_valid(self.isp_name, str)
+        self.is_valid(self.group_name, str)
+        self.is_valid(self.credit_comment, str)
+        self.is_valid(self.custom_fields, dict)
 
     def setup(self, count, credit, isp_name, group_name, credit_comment, custom_fields=None):
         """Setup required parameters.
 
-        :param int count: 
-        :param float credit: 
-        :param str isp_name: 
-        :param str group_name: 
-        :param str credit_comment: 
-        :param dict custom_fields: 
-    
-        :return: void
-        :rtype: void
+        :param int count: count of users
+        :param float credit: initialize credit
+        :param str isp_name: isp name
+        :param str group_name: group name
+        :param str credit_comment: credit comment
+        :param dict custom_fields: custom fields
+
+        :return: None
+        :rtype: None
         """
         self.count = count
         self.credit = credit

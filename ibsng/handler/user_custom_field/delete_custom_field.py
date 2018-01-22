@@ -1,16 +1,24 @@
-""" info API method."""
+"""Delete custom field API method."""
 from ibsng.handler.handler import Handler
 
 
 class deleteCustomField(Handler):
-    """ info method class."""
+    """Delete custom field method class."""
+
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.name, str)
 
     def setup(self, name):
         """Setup required parameters.
 
         :param str name: 
-    
-        :return: void
-        :rtype: void
+
+        :return: None
+        :rtype: None
         """
         self.name = name

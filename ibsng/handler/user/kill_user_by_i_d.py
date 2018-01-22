@@ -12,7 +12,7 @@ class killUserByID(Handler):
         :rtype: None
         """
         self.is_valid(self.user_id, str)
-        self.is_valid_content(self.user_id)
+        self.is_valid_content(self.user_id, self.IDS_PATTERN)
 
     def setup(self, user_ids):
         """Setup required parameters.

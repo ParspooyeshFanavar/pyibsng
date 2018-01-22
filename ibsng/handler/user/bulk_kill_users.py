@@ -14,7 +14,7 @@ class bulkKillUsers(Handler):
         self.is_valid(self.conds, dict)
         self.is_valid(self.kill, bool)
 
-    def setup(self, conds, kill=None):
+    def setup(self, conds, kill=False):
         """Setup required parameters.
 
         :param dict conds: conditions

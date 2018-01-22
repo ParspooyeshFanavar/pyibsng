@@ -14,10 +14,10 @@ class changeCreditExtended(Handler):
         self.is_valid(self.user_id, int)
         self.is_valid(self.credit, float)
         self.is_valid(self.change_type, str)
-        self.is_valid_content(self.change_type, ("ADD", "SET", "MULTIPLY"))
-        self.is_valid(self.credit_comment, str)
+        self.is_valid_content(self.change_type, ("ADD|SET|MULTIPLY"))
+        self.is_valid(self.credit_comment, str, False)
 
-    def setup(self, user_id, credit, change_type, credit_comment):
+    def setup(self, user_id, credit, change_type, credit_comment=""):
         """Setup required parameters.
 
         :param str user_id: ibsng user id

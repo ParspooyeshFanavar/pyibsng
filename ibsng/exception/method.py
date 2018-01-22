@@ -66,18 +66,21 @@ class InvalidArgumentType(IBSngException):
 
 
 class InvalidArgumentValue(IBSngException):
-    """Raise when method argument value is incorrect."""
+    """Raise when method argument value is incorrect format."""
 
     _err_code = 305
 
-    def __init__(self, method_name, argument_value, valid_values):
-        """Raise when method argument value is incorrect.
+    def __init__(self, method_name, argument_value, regex_pattern=""):
+        """Raise when method argument value is incorrect format.
 
         :param str method_name: method name
         :param type argument_value: argument data
-        :param type valid_values: list of valid values which argument_value
-                                  should be in.
+        :param type valid_values: regular expression pattern
         """
-        message = "Method '{}' got incorrect argument type: '{}' ({})".\
-                  format(method_name, argument_value, valid_values)
+        if not regex_pattern:
+            message = "Method '{}' got empty argument value: '{}'".\
+                      format(method_name, argument_value)
+        else:
+            message = "Method '{}' got incorrect argument value: '{}' ({})".\
+                      format(method_name, argument_value, valid_values)
         super(InvalidArgumentValue, self).__init__(message)

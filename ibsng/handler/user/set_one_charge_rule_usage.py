@@ -17,7 +17,8 @@ class setOneChargeRuleUsage(Handler):
         self.is_valid(self.time_usage, int)
         self.is_valid(self.traffic_usage, int)
 
-    def setup(self, user_id, charge_rule_id, credit_usage, time_usage, traffic_usage):
+    def setup(self, user_id, charge_rule_id, credit_usage,
+              time_usage, traffic_usage):
         """Setup required parameters.
 
         :param int user_id: ibsng user id

@@ -16,9 +16,10 @@ class addNewUsers(Handler):
         self.is_valid(self.isp_name, str)
         self.is_valid(self.group_name, str)
         self.is_valid(self.credit_comment, str)
-        self.is_valid(self.custom_fields, dict)
+        self.is_valid(self.custom_fields, dict, False)
 
-    def setup(self, count, credit, isp_name, group_name, credit_comment, custom_fields=None):
+    def setup(self, count, credit, isp_name, group_name,
+              credit_comment="", custom_fields={}):
         """Setup required parameters.
 
         :param int count: count of users

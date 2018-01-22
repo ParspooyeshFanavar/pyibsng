@@ -12,7 +12,7 @@ class getUserInfo(Handler):
         :rtype: None
         """
         if hasattr(self, "user_id"):
-            self.is_valid(self.user_id, str)
+            self.is_valid(self.user_id, int)
         if hasattr(self, "normal_username"):
             self.is_valid(self.normal_username, str)
         if hasattr(self, "voip_username"):
@@ -36,7 +36,7 @@ class getUserInfo(Handler):
         :rtype: None
         """
         if user_id:
-            self.user_id = str(user_id)
+            self.user_id = user_id
         elif normal_username:
             self.normal_username = normal_username
         elif voip_username:

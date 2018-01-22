@@ -14,9 +14,9 @@ class changeDeposit(Handler):
         self.is_valid(self.user_id, int)
         self.is_valid(self.deposit, float)
         self.is_valid(self.is_absolute_change, bool)
-        self.is_valid(self.deposit_comment, str)
+        self.is_valid(self.deposit_comment, str, False)
 
-    def setup(self, user_id, deposit, is_absolute_change, deposit_comment):
+    def setup(self, user_id, deposit, is_absolute_change, deposit_comment=""):
         """Setup required parameters.
 
         :param str user_id: ibsng user id

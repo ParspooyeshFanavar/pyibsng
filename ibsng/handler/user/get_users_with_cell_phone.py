@@ -13,12 +13,12 @@ class getUsersWithCellPhone(Handler):
         """
         self.is_valid(self.cell_phone, str)
 
-    def setup(self, cell_phone):
+    def setup(self, cellphone):
         """Setup required parameters.
 
-        :param str cell_phone: ibsng users cell phone
+        :param str cellphone: ibsng users cellphone
 
         :return: None
         :rtype: None
         """
-        self.cell_phone = cell_phone
+        self.cell_phone = cellphone

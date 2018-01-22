@@ -12,7 +12,7 @@ class bulkRenewUsers(Handler):
         :rtype: None
         """
         self.is_valid(self.conds, dict)
-        self.renew_comment(self.renew_comment, str)
+        self.is_valid(self.renew_comment, str, False)
 
     def setup(self, conds, renew_comment=""):
         """Setup required parameters.

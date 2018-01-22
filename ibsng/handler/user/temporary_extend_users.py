@@ -12,6 +12,7 @@ class temporaryExtendUsers(Handler):
         :rtype: None
         """
         self.is_valid(self.user_id, str)
+        self.is_valid_content(self.user_id, self.IDS_PATTERN)
         self.is_valid(self.temporary_extend_hours, int)
         self.is_valid(self.temporary_extend_credit, float)
 

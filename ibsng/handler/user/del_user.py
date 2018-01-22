@@ -12,12 +12,12 @@ class delUser(Handler):
         :rtype: None
         """
         self.is_valid(self.user_id, str)
-        self.is_valid(self.delete_comment, str)
         self.is_valid(self.del_connection_logs, bool)
         self.is_valid(self.del_audit_logs, bool)
+        self.is_valid(self.delete_comment, str, False)
 
-    def setup(self, user_ids, delete_comment,
-              del_connection_logs, del_audit_logs):
+    def setup(self, user_ids, del_connection_logs,
+              del_audit_logs, delete_comment=""):
         """Setup required parameters.
 
         :param list user_id: list of ibsng user ids
@@ -31,6 +31,6 @@ class delUser(Handler):
         :rtype: None
         """
         self.user_id = ",".join(map(str, user_ids))
-        self.delete_comment = delete_comment
         self.del_connection_logs = del_connection_logs
         self.del_audit_logs = del_audit_logs
+        self.delete_comment = delete_comment

@@ -1,17 +1,7 @@
-""" info API method."""
+"""Kick failed user by ip info API method."""
 from ibsng.handler.handler import Handler
 
 
 class kickFailedUserByIP(Handler):
-    """ info method class."""
-
-    def setup(self, **kwargs):
-        """Setup required parameters.
-
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
-        """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    """Kick failed user by ip method class."""
+    pass

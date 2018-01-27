@@ -1,14 +1,18 @@
-"""Initialize handler methods."""
+"""Initialize handler methods.
+
+This class will not invoke by someone. It's just for inheritance.
+"""
+from abs import ABCMeta, abstractmethod
 
 
-class Initiator(object):
+class Initiator(object, metaclass=ABCMeta):
     """Initialize handler method."""
 
     def __init__(self, *args, **kwargs):
         """Make headers ready."""
         self.setup(*args, **kwargs)
-        self.control()
 
+    @abstractmethod
     def setup(self, *args, **kwargs):
         """Set up passed arguments and update method headers."""
         raise NotImplementedError()

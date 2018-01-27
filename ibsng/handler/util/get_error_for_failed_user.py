@@ -1,17 +1,7 @@
-""" info API method."""
+"""Get error for failed user API method."""
 from ibsng.handler.handler import Handler
 
 
 class getErrorForFailedUser(Handler):
-    """ info method class."""
-
-    def setup(self, **kwargs):
-        """Setup required parameters.
-
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
-        """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    """Get error for failed user method class."""
+    pass

@@ -1,1 +1,1 @@
-"""All methods of custom field handler."""
+"""Custom field library."""

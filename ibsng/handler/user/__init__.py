@@ -1,1 +1,1 @@
-"""All methods of user handler."""
+"""User library."""

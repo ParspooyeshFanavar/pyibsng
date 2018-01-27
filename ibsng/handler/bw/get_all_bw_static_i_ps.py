@@ -4,10 +4,4 @@ from ibsng.handler.handler import Handler
 
 class getAllBwStaticIPs(Handler):
     """Get all bandwidth static IP class."""
-
-    def setup(self):
-        """Setup required parameters.
-
-        :return: None
-        :rtype: None
-        """
+    pass

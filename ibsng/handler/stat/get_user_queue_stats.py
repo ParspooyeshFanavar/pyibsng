@@ -1,17 +1,7 @@
-""" info API method."""
+"""Get user queue stats API method."""
 from ibsng.handler.handler import Handler
 
 
 class getUserQueueStats(Handler):
-    """ info method class."""
-
-    def setup(self, **kwargs):
-        """Setup required parameters.
-
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
-        """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    """Get user queue stats method class."""
+    pass

@@ -1,16 +1,25 @@
-""" info API method."""
+"""Get auth data API method."""
 from ibsng.handler.handler import Handler
 
 
 class getAuthData(Handler):
-    """ info method class."""
+    """Get auth data method class."""
 
-    def setup(self, auth_session):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.auth_session, int)
+        self.is_valid_content(self.auth_session, self.ID_PATTERN)
+
+    def setup(self, session_id):
         """Setup required parameters.
 
-        :param str auth_session: session_id
-    
-        :return: void
-        :rtype: void
+        :param str auth_session: session id
+
+        :return: None
+        :rtype: None
         """
-        self.auth_session = auth_session
+        self.auth_session = session_id

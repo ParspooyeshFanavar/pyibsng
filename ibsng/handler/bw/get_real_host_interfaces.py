@@ -5,6 +5,16 @@ from ibsng.handler.handler import Handler
 class getRealHostInterfaces(Handler):
     """Get real host interfaces class."""
 
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.hostname, str)
+        self.is_valid(self.host_type, str)
+        self.is_valid_content(self.host_type, "(Linux|Mikrotik)")
+
     def setup(self, hostname, host_type):
         """Setup required parameters.
 

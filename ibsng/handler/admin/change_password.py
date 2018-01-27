@@ -5,6 +5,15 @@ from ibsng.handler.handler import Handler
 class changePassword(Handler):
     """Admin change password class."""
 
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.admin_username, str)
+        self.is_valid(self.admin_password, str)
+
     def setup(self, admin_username, new_password):
         """Setup required parameters.
 

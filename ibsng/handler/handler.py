@@ -22,11 +22,13 @@ class myNewMethod(Interface):
         self.from_ = from_
         self.to_ = to_
 """
+from abc import ABCMeta, abstractmethod
+
 from ibsng.handler.initiator import Initiator
 from ibsng.handler.control import Control
 
 
-class Handler(Initiator, Control):
+class Handler(Initiator, Control, metaclass=ABCMeta):
     """Base handler class to handle API methods."""
 
     _method_headers = dict()
@@ -35,6 +37,7 @@ class Handler(Initiator, Control):
         """Make headers ready."""
         super(Handler, self).__init__(*args, **kwargs)
         self.update_headers()
+        self.control()
 
     def update_headers(self):
         """Update required headers keys before each request.
@@ -53,6 +56,7 @@ class Handler(Initiator, Control):
         """
         return self._method_headers
 
+    @abstractmethod
     def outcome(self, result):
         """Convert result items to required types.
 

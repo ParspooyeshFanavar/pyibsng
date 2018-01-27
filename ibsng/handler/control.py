@@ -1,18 +1,22 @@
 """Main inputs validator library."""
 import re
+from abc import ABCMeta, abstractmethod
 
 from ibsng.exception.method import InvalidArgumentType, InvalidArgumentValue
 
 
-class Control(object):
+class Control(object, metaclass=ABCMeta):
     """Controlling inputs.
 
     .. note: do not implement __init__ method for this class.
     """
 
     # useful patterns
-    EMAIL_PATTERN = "[a-zA-Z0-9\_\-\.\+]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]+"
-    IDS_PATTERN = "[0-9\,]+"
+    EMAIL_PATTERN = r"[a-zA-Z0-9\_\-\.\+]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]+"
+    IP_PATTERN = r"^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$"
+    ID_PATTERN = r"^[0-9]+$"
+    IDS_PATTERN = r"^[0-9\,]+$"
+    POSITIVE_NUMBER = r"^[0-9]+$"
 
     def is_valid(self, argument_value, argument_type, value_check=True):
         """Validate argument type before sending to the server.
@@ -52,8 +56,9 @@ class Control(object):
                                        regex_pattern)
         return True
 
+    @abstractmethod
     def control(self):
-        """This method will be called to validate inputs.
+        """Validate arguments of methods (input).
 
         .. note: Should be implemented based on requirements
 

@@ -1,16 +1,24 @@
-""" info API method."""
+"""Get charge info API method."""
 from ibsng.handler.handler import Handler
 
 
 class getChargeInfo(Handler):
-    """ info method class."""
+    """Get charge info method class."""
+
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.charge_name, str)
 
     def setup(self, charge_name):
         """Setup required parameters.
 
-        :param str charge_name: 
-    
-        :return: void
-        :rtype: void
+        :param str charge_name: charge name
+
+        :return: None
+        :rtype: None
         """
         self.charge_name = charge_name

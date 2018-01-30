@@ -1,24 +1,37 @@
-""" info API method."""
+"""Update extra charge API method."""
 from ibsng.handler.handler import Handler
 
 
 class updateExtraChargeProfile(Handler):
-    """ info method class."""
+    """Update extra charge method class."""
 
-    def setup(self, profile_id, profile_name, comment, effective_hour, rules):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.profile_id, int)
+        self.is_valid(self.profile_name, str)
+        self.is_valid(self.effective_hour, str)
+        self.is_valid(self.rules, list)
+        self.is_valid(self.comment, str, False)
+
+    def setup(self, profile_id, profile_name,
+              effective_hour, rules, comment=""):
         """Setup required parameters.
 
-        :param int profile_id: 
-        :param str profile_name: 
-        :param str comment: 
-        :param str effective_hour: format: HH:MM
-        :param list rules: 
-    
-        :return: void
-        :rtype: void
+        :param int profile_id: profile id
+        :param str profile_name: new profile name
+        :param str effective_hour: new effective hour (format: HH:MM)
+        :param list rules: new rules list
+        :param str comment: new extra charge comment
+
+        :return: None
+        :rtype: None
         """
         self.profile_id = profile_id
         self.profile_name = profile_name
-        self.comment = comment
         self.effective_hour = effective_hour
         self.rules = rules
+        self.comment = comment

@@ -1,16 +1,24 @@
-""" info API method."""
+"""List groups with id API method."""
 from ibsng.handler.handler import Handler
 
 
 class listGroupsWithIDs(Handler):
-    """ info method class."""
+    """List groups with id method class."""
 
-    def setup(self, active_only=None):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.active_only, bool)
+
+    def setup(self, active_only=False):
         """Setup required parameters.
 
         :param bool active_only: pass true if you only want active groups
-    
-        :return: void
-        :rtype: void
+
+        :return: None
+        :rtype: None
         """
         self.active_only = active_only

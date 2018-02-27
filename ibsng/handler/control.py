@@ -50,7 +50,19 @@ class Control(object, metaclass=ABCMeta):
         :return: argument validation
         :rtype: bool
         """
-        if not argument_value or not re.match(regex_pattern, argument_value):
+        is_valid = True
+
+        if isinstance(argument_value, (list, tuple)):
+            for value in argument_value:
+                if not value or not re.match(regex_pattern, value):
+                    is_valid = False
+                    break
+        else:
+            if not argument_value or \
+               not re.match(regex_pattern, argument_value):
+                is_valid = False
+
+        if not is_valid:
             raise InvalidArgumentValue(self.__class__.__name__,
                                        argument_value,
                                        regex_pattern)

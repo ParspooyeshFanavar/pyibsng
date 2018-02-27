@@ -1,9 +1,9 @@
-"""All LDAP methods info API method."""
+"""Delete LDAP IBSng mapping API method."""
 from ibsng.handler.handler import Handler
 
 
 class deleteLDAPIBSMapping(Handler):
-    """All LDAP methods info method class."""
+    """Delete LDAP IBSng mapping method class."""
 
     def control(self):
         """Validate inputs after setup method.

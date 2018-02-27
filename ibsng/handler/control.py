@@ -23,7 +23,7 @@ class Control(object, metaclass=ABCMeta):
 
         .. raise: InvalidArgumentType
 
-        :param type argument_value: argument data
+        :param object argument_value: argument data
         :param type argument_type: type of argument which argument must be.
 
         :return: argument validation
@@ -44,8 +44,8 @@ class Control(object, metaclass=ABCMeta):
 
         .. raise: InvalidArgumentValue
 
-        :param type argument_value: argument data
-        :param type valid_values: regular expression pattern
+        :param object argument_value: argument data
+        :param str regex_pattern: regular expression pattern
 
         :return: argument validation
         :rtype: bool
@@ -54,6 +54,23 @@ class Control(object, metaclass=ABCMeta):
             raise InvalidArgumentValue(self.__class__.__name__,
                                        argument_value,
                                        regex_pattern)
+        return True
+
+    def is_valid_choice(self, argument_value, valid_list):
+        """Validate argument content based on valid list.
+
+        .. raise: InvalidArgumentValue
+
+        :param object argument_value: argument data
+        :param list valid_list: valid data list
+
+        :return: argument validation
+        :rtype: bool
+        """
+        if argument_value not in valid_list:
+            raise InvalidArgumentValue(self.__class__.__name__,
+                                       argument_value,
+                                       valid_list)
         return True
 
     @abstractmethod

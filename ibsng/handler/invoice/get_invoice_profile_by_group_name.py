@@ -1,9 +1,17 @@
-"""based on branch C_invoice info API method."""
+"""Get invoice profile by group name API method."""
 from ibsng.handler.handler import Handler
 
 
 class getInvoiceProfileByGroupName(Handler):
-    """based on branch C_invoice info method class."""
+    """Get invoice profile by group name method class."""
+
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.group_name, str)
 
     def setup(self, group_name):
         """Setup required parameters.

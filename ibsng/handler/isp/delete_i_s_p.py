@@ -1,16 +1,24 @@
-""" info API method."""
+""" Delete ISP API method."""
 from ibsng.handler.handler import Handler
 
 
 class deleteISP(Handler):
-    """ info method class."""
+    """ Delete ISP method class."""
+
+    def control(self):
+        """Validate inputs after method setup
+
+        :return: None
+        :rtype: None
+        """
+
+        self.is_valid(self.isp_name, str)
 
     def setup(self, isp_name):
         """Setup required parameters.
 
-        :param str isp_name: 
-    
-        :return: void
-        :rtype: void
+        :param str isp_name: isp name
+        :return: None
+        :rtype: None
         """
         self.isp_name = isp_name

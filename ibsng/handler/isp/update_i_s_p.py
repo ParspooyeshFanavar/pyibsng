@@ -1,29 +1,50 @@
-""" info API method."""
+"""Update ISP API method."""
 from ibsng.handler.handler import Handler
 
 
 class updateISP(Handler):
-    """ info method class."""
+    """Update ISP method class."""
 
-    def setup(self, isp_id, isp_name, parent_isp_name, isp_has_deposit_limit, isp_mapped_user_id, isp_auth_domain, isp_web_domain, isp_email, prevent_neg_deposit_login, isp_comment, isp_failed_user_id, isp_locked):
+    def control(self):
+        """Validate inputs after method setup
+
+        :return: None
+        :rtype: None
+        """
+
+        self.is_valid(self.isp_id, int)
+        self.is_valid(self.isp_name, str)
+        self.is_valid(self.parent_isp_name, str)
+        self.is_valid(self.isp_has_deposit_limit, bool)
+        self.is_valid(self.isp_mapped_user_id, int)
+        self.is_valid(self.isp_auth_domain, str)
+        self.is_valid(self.isp_web_domain, str)
+        self.is_valid(self.isp_email, str)
+        self.is_valid(self.prevent_neg_deposit_login, bool)
+        self.is_valid(self.isp_comment, str)
+        self.is_valid(self.isp_failed_user_id, int)
+        self.is_valid(self.isp_locked, bool)
+
+    def setup(self, isp_id, isp_name, parent_isp_name, isp_has_deposit_limit, isp_mapped_user_id, isp_auth_domain,
+              isp_web_domain, isp_email, prevent_neg_deposit_login, isp_comment, isp_failed_user_id, isp_locked):
         """Setup required parameters.
 
-        :param int isp_id: 
-        :param str isp_name: 
-        :param str parent_isp_name: 
-        :param bool isp_has_deposit_limit: 
-        :param int isp_mapped_user_id: 
-        :param str isp_auth_domain: 
-        :param str isp_web_domain: 
-        :param str isp_email: 
-        :param bool prevent_neg_deposit_login: 
-        :param str isp_comment: 
-        :param int isp_failed_user_id: removed in C_dev_326
-        :param bool isp_locked: 
-    
-        :return: void
-        :rtype: void
+        :param int isp_id: isp id
+        :param str isp_name: isp name
+        :param str parent_isp_name: parent isp name
+        :param bool isp_has_deposit_limit: isp has deposit limit
+        :param int isp_mapped_user_id: isp mapped user id
+        :param str isp_auth_domain: isp auth domain
+        :param str isp_web_domain: isp web domain
+        :param str isp_email: isp email
+        :param bool prevent_neg_deposit_login: prevent neg deposit login
+        :param str isp_comment: isp comment
+        :param int isp_failed_user_id: isp failed user id
+        :param bool isp_locked: isp locked
+        :return: None
+        :rtype: None
         """
+
         self.isp_id = isp_id
         self.isp_name = isp_name
         self.parent_isp_name = parent_isp_name

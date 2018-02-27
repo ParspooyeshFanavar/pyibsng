@@ -1,17 +1,8 @@
-""" info API method."""
+""" Get all ISP names API method."""
 from ibsng.handler.handler import Handler
 
 
 class getAllISPNames(Handler):
-    """ info method class."""
+    """ Get all ISP names method class."""
 
-    def setup(self, **kwargs):
-        """Setup required parameters.
-
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
-        """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    pass

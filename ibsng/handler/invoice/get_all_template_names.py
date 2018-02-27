@@ -1,9 +1,9 @@
-"""based on branch C_invoice info API method."""
+"""Get all template names API method."""
 from ibsng.handler.handler import Handler
 
 
 class getAllTemplateNames(Handler):
-    """based on branch C_invoice info method class."""
+    """Get all template names method class."""
 
     def setup(self, **kwargs):
         """Setup required parameters.

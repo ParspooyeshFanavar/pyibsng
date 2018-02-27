@@ -1,17 +1,8 @@
-"""Admin Permission info API method."""
+"""Get list of permission templates API method."""
 from ibsng.handler.handler import Handler
 
 
 class getListOfPermTemplates(Handler):
-    """Admin Permission info method class."""
+    """Get list of permission templates method class."""
 
-    def setup(self, **kwargs):
-        """Setup required parameters.
-
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
-        """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    pass

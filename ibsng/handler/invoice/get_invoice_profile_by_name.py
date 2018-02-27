@@ -11,7 +11,7 @@ class getInvoiceProfileByName(Handler):
         :return: None
         :rtype: None
         """
-        self.is_valid(self.profile_name , str)
+        self.is_valid(self.profile_name, str)
 
     def setup(self, profile_name):
         """Setup required parameters.

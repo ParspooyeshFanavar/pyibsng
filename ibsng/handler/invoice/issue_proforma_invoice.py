@@ -5,7 +5,7 @@ from ibsng.handler.handler import Handler
 class issueProformaInvoice(Handler):
     """Issue performa invoice method class."""
 
-   def control(self):
+    def control(self):
         """Validate inputs after setup method.
 
         :return: None

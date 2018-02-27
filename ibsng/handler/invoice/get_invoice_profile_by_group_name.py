@@ -16,9 +16,9 @@ class getInvoiceProfileByGroupName(Handler):
     def setup(self, group_name):
         """Setup required parameters.
 
-        :param str group_name: 
-    
-        :return: void
-        :rtype: void
+        :param str group_name: ibsng group name
+
+        :return: None
+        :rtype: None
         """
         self.group_name = group_name

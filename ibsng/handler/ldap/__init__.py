@@ -1,1 +1,1 @@
-"""LDAP handler library."""
+"""LDAP library."""

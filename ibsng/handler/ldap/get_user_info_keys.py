@@ -1,16 +1,24 @@
-"""All LDAP methods info API method."""
+"""Get user info keys API method."""
 from ibsng.handler.handler import Handler
 
 
 class getUserInfoKeys(Handler):
-    """All LDAP methods info method class."""
+    """Get user info keys method class."""
 
-    def setup(self, domain):
+    def control(self):
+        """Validate inputs after setup method.
+
+        :return: None
+        :rtype: None
+        """
+        self.is_valid(self.domain, str)
+
+    def setup(self, domain_name):
         """Setup required parameters.
 
-        :param str domain: name of ldap domain
-    
-        :return: void
-        :rtype: void
+        :param str domain_name: name of ldap domain
+
+        :return: None
+        :rtype: None
         """
-        self.domain = domain
+        self.domain = domain_name

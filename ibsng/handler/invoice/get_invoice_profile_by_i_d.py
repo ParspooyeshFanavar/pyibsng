@@ -11,12 +11,12 @@ class getInvoiceProfileByID(Handler):
         :return: None
         :rtype: None
         """
-        self.is_valid(self.profile_id , int)
+        self.is_valid(self.profile_id, int)
 
     def setup(self, profile_id):
         """Setup required parameters.
 
-        :param int profile_id: 
+        :param int profile_id: profile id
 
         :return: None
         :rtype: None

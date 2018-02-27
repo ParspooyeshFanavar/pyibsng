@@ -5,7 +5,7 @@ from ibsng.handler.handler import Handler
 class getPIByID(Handler):
     """Get pi by id method class."""
 
-   def control(self):
+    def control(self):
         """Validate inputs after setup method.
 
         :return: None

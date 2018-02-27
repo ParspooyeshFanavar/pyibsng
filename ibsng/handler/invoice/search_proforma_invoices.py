@@ -5,7 +5,7 @@ from ibsng.handler.handler import Handler
 class searchProformaInvoices(Handler):
     """Search performa invoice method class."""
 
-   def control(self):
+    def control(self):
         """Validate inputs after setup method.
 
         :return: None
@@ -20,10 +20,10 @@ class searchProformaInvoices(Handler):
     def setup(self, conds, _from, to_, sort_by, desc):
         """Setup required parameters.
 
-        :param dict conds: 
+        :param dict conds: conditions
         :param int _from: pagination start
         :param int to: pagination end
-        :param choice sort_by: 
+        :param choice sort_by: sort result by specific field
         :param bool desc: descending
 
         :return: None

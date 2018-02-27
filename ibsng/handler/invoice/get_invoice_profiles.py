@@ -4,4 +4,5 @@ from ibsng.handler.handler import Handler
 
 class getInvoiceProfiles(Handler):
     """Get invoice profiles method class."""
+
     pass

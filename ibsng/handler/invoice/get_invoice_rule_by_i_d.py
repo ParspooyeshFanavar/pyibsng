@@ -5,7 +5,7 @@ from ibsng.handler.handler import Handler
 class getInvoiceRuleByID(Handler):
     """Get invoice by rule id method class."""
 
-   def control(self):
+    def control(self):
         """Validate inputs after setup method.
 
         :return: None

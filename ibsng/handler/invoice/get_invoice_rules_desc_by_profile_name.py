@@ -5,7 +5,7 @@ from ibsng.handler.handler import Handler
 class getInvoiceRulesDescByProfileName(Handler):
     """Get invoice rules description by profile name method class."""
 
-   def control(self):
+    def control(self):
         """Validate inputs after setup method.
 
         :return: None

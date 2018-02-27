@@ -1,8 +1,8 @@
-""" info API method."""
+"""Get ras types API method."""
 from ibsng.handler.handler import Handler
 
 
 class getRasTypes(Handler):
-    """ info method class."""
+    """Get ras types method class."""
 
     pass

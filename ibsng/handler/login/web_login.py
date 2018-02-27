@@ -19,7 +19,8 @@ class webLogin(Handler):
         self.is_valid(self.auth_remoteaddr, str)
         self.is_valid_content(self.auth_remoteaddr, self.IP_PATTERN)
 
-    def setup(self, login_auth_type, login_auth_name, login_auth_pass, auth_remoteaddr):
+    def setup(self, login_auth_type, login_auth_name,
+              login_auth_pass, auth_remoteaddr):
         """Setup required parameters.
 
         :param str login_auth_type: authentication type

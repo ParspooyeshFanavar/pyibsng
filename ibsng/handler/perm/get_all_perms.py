@@ -1,17 +1,27 @@
-"""Admin Permission info API method."""
+"""Get all permissions API method."""
 from ibsng.handler.handler import Handler
 
 
 class getAllPerms(Handler):
-    """Admin Permission info method class."""
+    """Get all permissions method class."""
 
-    def setup(self, **kwargs):
+    def control(self):
+        """Validate inputs after method setup
+
+        :return: None
+        :rtype: None
+        """
+
+        if hasattr(self, 'category'):
+            self.is_valid(self.category, str)
+
+    def setup(self, category):
         """Setup required parameters.
 
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
+        :param type category: category
+        :return: None
+        :rtype: None
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+
+        if category:
+            self.category = category

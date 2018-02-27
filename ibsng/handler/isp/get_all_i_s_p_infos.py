@@ -1,17 +1,25 @@
-""" info API method."""
+"""Get all ISP infos API method."""
 from ibsng.handler.handler import Handler
 
 
 class getAllISPInfos(Handler):
-    """ info method class."""
+    """Get all ISP infos method class."""
 
-    def setup(self, **kwargs):
+    def control(self):
+        """Validate inputs after method setup
+
+        :return: None
+        :rtype: None
+        """
+        if hasattr(self, 'sort_by'):
+            self.is_valid(self.sort_by, str)
+
+    def setup(self, sort_by=None):
         """Setup required parameters.
 
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
+        :param type sort_by: sort by
+        :return: None
+        :rtype: None
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        if sort_by:
+            self.sort_by = sort_by

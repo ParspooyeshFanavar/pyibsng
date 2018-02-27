@@ -1,17 +1,8 @@
-""" info API method."""
+"""Get ras description API method."""
 from ibsng.handler.handler import Handler
 
 
 class getRasDescriptions(Handler):
-    """ info method class."""
+    """Get ras description method class."""
 
-    def setup(self, **kwargs):
-        """Setup required parameters.
-
-        :param dict kwargs: input args
-
-        :return: void
-        :rtype: void
-        """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    pass

@@ -2,8 +2,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="ibsng",
-    version="1.2.2",
+    name="pyibsng",
+    version="1.2.3",
     description="IBSng python driver",
     long_description=open("README.rst").read(),
     author="Parspooyesh Fanavar",

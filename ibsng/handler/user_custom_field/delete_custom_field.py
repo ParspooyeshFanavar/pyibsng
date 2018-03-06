@@ -16,7 +16,7 @@ class deleteCustomField(Handler):
     def setup(self, name):
         """Setup required parameters.
 
-        :param str name: 
+        :param str name: custom field name
 
         :return: None
         :rtype: None

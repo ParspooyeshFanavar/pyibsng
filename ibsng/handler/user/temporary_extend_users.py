@@ -19,7 +19,7 @@ class temporaryExtendUsers(Handler):
     def setup(self, user_ids, temporary_extend_hours, temporary_extend_credit):
         """Setup required parameters.
 
-        :param list user_ids: ibsng user ids 
+        :param list user_ids: ibsng user ids
         :param int temporary_extend_hours: hours
         :param float temporary_extend_credit: credit
 

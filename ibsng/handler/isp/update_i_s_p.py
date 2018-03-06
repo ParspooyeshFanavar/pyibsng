@@ -6,12 +6,11 @@ class updateISP(Handler):
     """Update ISP method class."""
 
     def control(self):
-        """Validate inputs after method setup
+        """Validate inputs after method setup.
 
         :return: None
         :rtype: None
         """
-
         self.is_valid(self.isp_id, int)
         self.is_valid(self.isp_name, str)
         self.is_valid(self.parent_isp_name, str)
@@ -25,8 +24,10 @@ class updateISP(Handler):
         self.is_valid(self.isp_failed_user_id, int)
         self.is_valid(self.isp_locked, bool)
 
-    def setup(self, isp_id, isp_name, parent_isp_name, isp_has_deposit_limit, isp_mapped_user_id, isp_auth_domain,
-              isp_web_domain, isp_email, prevent_neg_deposit_login, isp_comment, isp_failed_user_id, isp_locked):
+    def setup(self, isp_id, isp_name, parent_isp_name, isp_has_deposit_limit,
+              isp_mapped_user_id, isp_auth_domain, isp_web_domain, isp_email,
+              prevent_neg_deposit_login, isp_comment, isp_failed_user_id,
+              isp_locked):
         """Setup required parameters.
 
         :param int isp_id: isp id
@@ -41,10 +42,10 @@ class updateISP(Handler):
         :param str isp_comment: isp comment
         :param int isp_failed_user_id: isp failed user id
         :param bool isp_locked: isp locked
+
         :return: None
         :rtype: None
         """
-
         self.isp_id = isp_id
         self.isp_name = isp_name
         self.parent_isp_name = parent_isp_name

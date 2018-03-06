@@ -1,6 +1,6 @@
 """Main session handler library.
 
-This library prepares session ID for requests.
+This library prepares session id for requests.
 """
 import requests
 from ibsng.setting import session as session_settings
@@ -23,5 +23,9 @@ class Session:
         return cls._is_instance
 
     def get_session(self):
-        """Return current session."""
+        """Return current session.
+
+        :return: current session
+        :rtype: str
+        """
         return self._session

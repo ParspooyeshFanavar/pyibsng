@@ -1,17 +1,16 @@
-"""c API method."""
+"""Load perms from another admin API method."""
 from ibsng.handler.handler import Handler
 
 
 class savePermsOfAdminToTemplate(Handler):
-    """loadPermsFromAnotherAdmin method class."""
+    """Load perms from another admin method class."""
 
     def control(self):
-        """Validate inputs after method setup
+        """Validate inputs after method setup.
 
         :return: None
         :rtype: None
         """
-
         self.is_valid(self.admin_username, str)
         self.is_valid(self.perm_template_name, str)
 
@@ -20,9 +19,9 @@ class savePermsOfAdminToTemplate(Handler):
 
         :param str admin_username: admin username
         :param str perm_template_name: permission template name
+
         :return: None
         :rtype: None
         """
-
         self.admin_username = admin_username
         self.perm_template_name = perm_template_name

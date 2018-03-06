@@ -1,11 +1,11 @@
-"""IBSng method exceptions handler."""
+"""IBSng 'method' exceptions handler."""
 from .base import IBSngException
 
 
 class ServerMethodError(IBSngException):
     """Raise when method result contains error."""
 
-    _err_code = 301
+    _err_code = 401
 
     def __init__(self, error_text):
         """Raise when method result contains error.
@@ -21,7 +21,7 @@ class ServerMethodError(IBSngException):
 class ImportMethodNotFound(IBSngException):
     """Raise when method file not found."""
 
-    _err_code = 302
+    _err_code = 402
 
     def __init__(self, method_name):
         """Raise when method file not found.
@@ -36,7 +36,7 @@ class ImportMethodNotFound(IBSngException):
 class ImportMethodError(IBSngException):
     """Raise when importing method encountered with error."""
 
-    _err_code = 303
+    _err_code = 403
 
     def __init__(self, method_name):
         """Raise when importing method encountered with error.
@@ -51,7 +51,7 @@ class ImportMethodError(IBSngException):
 class InvalidArgumentType(IBSngException):
     """Raise when method argument type is incorrect."""
 
-    _err_code = 304
+    _err_code = 404
 
     def __init__(self, method_name, argument_value, argument_type):
         """Raise when method argument type is incorrect.
@@ -68,19 +68,19 @@ class InvalidArgumentType(IBSngException):
 class InvalidArgumentValue(IBSngException):
     """Raise when method argument value is incorrect format."""
 
-    _err_code = 305
+    _err_code = 405
 
     def __init__(self, method_name, argument_value, regex_pattern=""):
         """Raise when method argument value is incorrect format.
 
         :param str method_name: method name
         :param type argument_value: argument data
-        :param type valid_values: regular expression pattern
+        :param type regex_pattern: regular expression pattern
         """
         if not regex_pattern:
             message = "Method '{}' got empty argument value: '{}'".\
                       format(method_name, argument_value)
         else:
             message = "Method '{}' got incorrect argument value: '{}' ({})".\
-                      format(method_name, argument_value, valid_values)
+                      format(method_name, argument_value, regex_pattern)
         super(InvalidArgumentValue, self).__init__(message)

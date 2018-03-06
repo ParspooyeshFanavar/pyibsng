@@ -22,7 +22,7 @@ class myNewMethod(Interface):
         self.from_ = from_
         self.to_ = to_
 """
-from abc import ABCMeta, abstractmethod
+from abc import ABCMeta
 
 from ibsng.handler.initiator import Initiator
 from ibsng.handler.control import Control
@@ -56,7 +56,6 @@ class Handler(Initiator, Control, metaclass=ABCMeta):
         """
         return self._method_headers
 
-    @abstractmethod
     def outcome(self, result):
         """Convert result items to required types.
 

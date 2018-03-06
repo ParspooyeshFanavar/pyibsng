@@ -2,7 +2,7 @@
 
 This class will not invoke by someone. It's just for inheritance.
 """
-from abs import ABCMeta, abstractmethod
+from abc import ABCMeta, abstractmethod
 
 
 class Initiator(object, metaclass=ABCMeta):

@@ -20,7 +20,7 @@ class addInterface(Handler):
     def setup(self, hostname, interface_name, host_type, comment=""):
         """Setup required parameters.
 
-        :param str hostname: host name 
+        :param str hostname: host name
         :param str interface_name: interface name
         :param str host_type: type of host (choice: Linux, Mikrotik)
         :param str comment: comment about this action

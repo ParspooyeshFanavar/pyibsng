@@ -6,7 +6,7 @@ class getAllISPInfos(Handler):
     """Get all ISP infos method class."""
 
     def control(self):
-        """Validate inputs after method setup
+        """Validate inputs after method setup.
 
         :return: None
         :rtype: None
@@ -18,6 +18,7 @@ class getAllISPInfos(Handler):
         """Setup required parameters.
 
         :param type sort_by: sort by
+
         :return: None
         :rtype: None
         """

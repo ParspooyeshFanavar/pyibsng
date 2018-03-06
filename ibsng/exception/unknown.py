@@ -1,11 +1,11 @@
-"""IBSng unknown exceptions handler."""
+"""IBSng 'unknown' exceptions handler."""
 from .base import IBSngException
 
 
 class UnknownError(IBSngException):
     """Raise when method result contains unknown error."""
 
-    _err_code = 501
+    _err_code = 601
 
     def __init__(self, error_text):
         """Raise when method result contains unknown error.

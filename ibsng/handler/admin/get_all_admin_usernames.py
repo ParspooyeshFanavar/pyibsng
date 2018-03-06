@@ -17,7 +17,7 @@ class getAllAdminUsernames(Handler):
     def setup(self, isp_name=None):
         """Setup required parameters.
 
-        :param str isp_name: isp name (optional) 
+        :param str isp_name: isp name (optional)
 
         :return: None
         :rtype: None

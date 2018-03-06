@@ -18,7 +18,7 @@ class updateAdminInfo(Handler):
         self.is_valid(self.name, str)
         self.is_valid(self.email, str)
         self.is_valid_content(self.email, self.EMAIL_PATTERN)
-        self.is_valid(comment, str, False)
+        self.is_valid(self.comment, str, False)
         self.is_valid(self.admin_has_otp, bool)
         self.is_valid(self.admin_request_limit, int)
 

@@ -1,17 +1,16 @@
-""" Add new load balancing ip pool API method."""
+"""Add new load balancing ip pool API method."""
 from ibsng.handler.handler import Handler
 
 
 class addNewLoadBalancingIPpool(Handler):
-    """ Add new load balancing ip pool method class."""
+    """Add new load balancing ip pool method class."""
 
     def control(self):
-        """Validate inputs after method setup
+        """Validate inputs after method setup.
 
         :return: None
         :rtype: None
         """
-
         self.is_valid(self.ippool_name, str)
         self.is_valid(self.ippool_comment, str)
         self.is_valid_choice(self.balancing_strategy,
@@ -27,6 +26,7 @@ class addNewLoadBalancingIPpool(Handler):
         :param choice balancing_strategy: balancing strategy
         :param dict children_ippool_percentages: keys are IPPool Names, values
                                                  are percentage numbers
+
         :return: None
         :rtype: None
         """

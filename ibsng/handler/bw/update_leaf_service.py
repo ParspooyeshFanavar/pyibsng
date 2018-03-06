@@ -33,8 +33,8 @@ class updateLeafService(Handler):
         :param int leaf_service_id: leaf service ID
         :param str dst_ip: new destination IP
         :param str protocol: new protocol (choice: tcp, udp, icmp, ip)
-        :param str filter_format: format: 'sport COMMA_SEPARATED_PORTS' or 
-                                  'dport COMMA_SEPARATED_PORTS' 
+        :param str filter_format: format: 'sport COMMA_SEPARATED_PORTS' or
+                                  'dport COMMA_SEPARATED_PORTS'
         :param int rate_kbits: new kilo bits
         :param int ceil_kbits: new kilo bits
         :param int priority: new priority

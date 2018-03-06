@@ -12,6 +12,7 @@ def is_handler_exist(handler_name):
 
     :param handler_name: handler name
     :type handler_name: str
+
     :return: is handler exists or not
     :rtype: bool
     """
@@ -26,9 +27,10 @@ def is_method_exist(handler_name, method_name):
     """Check the method is exist in driver.
 
     :param handler_name: handler name
-    :param metho_name: method name
     :type handler_name: str
+    :param metho_name: method name
     :type method_name: str
+
     :return: is method exists or not
     :rtype: bool
     """

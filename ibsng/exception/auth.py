@@ -1,11 +1,11 @@
-"""IBSng authentication exceptions handler."""
+"""IBSng 'authentication' exceptions handler."""
 from .base import IBSngException
 
 
 class InvalidAuthentication(IBSngException):
     """Raise when user authentication failed."""
 
-    _err_code = 401
+    _err_code = 501
 
     def __init__(self):
         """Raise when user authentication failed."""
@@ -16,7 +16,7 @@ class InvalidAuthentication(IBSngException):
 class InvalidSessionId(IBSngException):
     """Raise when user session id is invalid."""
 
-    _err_code = 402
+    _err_code = 502
 
     def __init__(self):
         """Raise when user session id is invalid."""

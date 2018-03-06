@@ -2,10 +2,10 @@
 from .base import IBSngException
 
 
-class ImportHandlerNotFound(IBSngException):
+class HandlerNotFound(IBSngException):
     """Raise when handler directory not found."""
 
-    _err_code = 201
+    _err_code = 301
 
     def __init__(self, handler_name):
         """Raise when handler directory not found.
@@ -14,4 +14,4 @@ class ImportHandlerNotFound(IBSngException):
         :type handler_name: str
         """
         message = "There is no '{}' handler in driver.".format(handler_name)
-        super(ImportHandlerNotFound, self).__init__(message)
+        super(HandlerNotFound, self).__init__(message)

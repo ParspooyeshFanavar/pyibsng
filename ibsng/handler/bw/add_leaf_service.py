@@ -30,7 +30,7 @@ class addLeafService(Handler):
         :param str leaf_name: leaf name
         :param str dst_ip: destination IP address
         :param str protocol: protocol type (choice: tcp, udp, icmp, ip)
-        :param str filter_format: format: 'sport COMMA_SEPARATED_PORTS' or 
+        :param str filter_format: format: 'sport COMMA_SEPARATED_PORTS' or
                                   'dport COMMA_SEPARATED_PORTS'
         :param int rate_kbits: kilo bit
         :param int ceil_kbits: kilo bit

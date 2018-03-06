@@ -1,4 +1,4 @@
-"""Main exception handler library."""
+"""IBSng 'response exception' exceptions handler."""
 from . import auth, unknown
 
 
@@ -7,6 +7,7 @@ def throw_exception(server_error):
 
     :param server_error: sever error body
     :type server_error: str
+
     :return: exception class
     :rtype: object
     """

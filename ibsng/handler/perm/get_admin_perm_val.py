@@ -6,12 +6,11 @@ class getAdminPermVal(Handler):
     """Get admin permission value method class."""
 
     def control(self):
-        """Validate inputs after method setup
+        """Validate inputs after method setup.
 
         :return: None
         :rtype: None
         """
-
         self.is_valid(self.admin_username, str)
         self.is_valid(self.perm_name, str)
 
@@ -20,9 +19,9 @@ class getAdminPermVal(Handler):
 
         :param str admin_username: admin username
         :param str perm_name: permission name
+
         :return: None
         :rtype: None
         """
-
         self.admin_username = admin_username
         self.perm_name = perm_name

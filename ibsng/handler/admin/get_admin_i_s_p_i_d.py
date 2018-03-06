@@ -2,7 +2,7 @@
 from ibsng.handler.handler import Handler
 
 
-class getAdminISPID(handler):
+class getAdminISPID(Handler):
     """Get ISP ID of an admin class."""
 
     def control(self):

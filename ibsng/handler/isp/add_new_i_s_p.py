@@ -6,12 +6,11 @@ class addNewISP(Handler):
     """Add new ISP method class."""
 
     def control(self):
-        """Validate inputs after method setup
+        """Validate inputs after method setup.
 
         :return: None
         :rtype: None
         """
-
         self.is_valid(self.isp_name, str)
         self.is_valid(self.parent_isp_name, str)
         self.is_valid(self.isp_has_deposit_limit, bool)
@@ -26,7 +25,8 @@ class addNewISP(Handler):
 
     def setup(self, isp_name, parent_isp_name, isp_has_deposit_limit,
               isp_deposit, isp_mapped_user_id, isp_auth_domain, isp_web_domain,
-              isp_email, prevent_neg_deposit_login, isp_comment, isp_failed_user_id):
+              isp_email, prevent_neg_deposit_login,
+              isp_comment, isp_failed_user_id):
         """Setup required parameters.
 
         :param str isp_name: isp name
@@ -40,6 +40,7 @@ class addNewISP(Handler):
         :param bool prevent_neg_deposit_login: prevent neg deposit login
         :param str isp_comment: isp comment
         :param int isp_failed_user_id: isp failed user id
+
         :return: None
         :rtype: None
         """

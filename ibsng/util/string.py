@@ -9,13 +9,15 @@ import re
 def connection_string_parser(conn_str):
     """Parse connection string pattern.
 
-    :param conn_str: connection string
-    :type conn_str: str
-    :return: connection config
-    :rtype: tuple
     :raises ValueError: raise ValueError when can't parse connection string
     :raises InvalidConnectionString: rasie InvalidConnectionString when
-        connection string is not in correct style
+                                     connection string is not in correct style
+
+    :param conn_str: connection string
+    :type conn_str: str
+
+    :return: connection config
+    :rtype: tuple
     """
     try:
         # Fetch server info (host/port)
@@ -51,6 +53,7 @@ def camel_to_snake(string):
 
     :param string: camel string
     :type string: str
+
     :return: snake style string
     :rtype: str
     """
@@ -66,6 +69,7 @@ def validate_server_addr(server_addr):
 
     :param server_addr: Server address (domain name or IP)
     :type server_addr: str
+
     :return: return validation result
     :rtype: bool
     """

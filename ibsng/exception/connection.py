@@ -1,4 +1,4 @@
-"""IBSng connection exceptions handler."""
+"""IBSng 'connection' exceptions handler."""
 from .base import IBSngException
 
 

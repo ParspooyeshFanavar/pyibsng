@@ -26,7 +26,7 @@ class addLeaf(Handler):
               default_priority, total_priority):
         """Setup required parameters.
 
-        :param str leaf_name: leaf name 
+        :param str leaf_name: leaf name
         :param int parent_id: parent leaf
         :param int default_rate_kbits: kilo bits
         :param int default_ceil_kbits: kilo bits

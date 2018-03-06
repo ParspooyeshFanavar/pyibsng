@@ -17,9 +17,9 @@ class changePassword(Handler):
     def setup(self, admin_username, new_password):
         """Setup required parameters.
 
-        :param str admin_username: admin authentication username 
+        :param str admin_username: admin authentication username
         :param str new_password: admin authentication new password
- 
+
         :return: None
         :rtype: None
         """

@@ -20,7 +20,7 @@ class addBwStaticIP(Handler):
 
         :param str ip_addr: IP address
         :param str tx_leaf_name: leaf name
-        :param str rx_leaf_name: leaf name 
+        :param str rx_leaf_name: leaf name
 
         :return: None
         :rtype: None

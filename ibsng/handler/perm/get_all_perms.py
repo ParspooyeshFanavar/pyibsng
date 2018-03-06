@@ -6,12 +6,11 @@ class getAllPerms(Handler):
     """Get all permissions method class."""
 
     def control(self):
-        """Validate inputs after method setup
+        """Validate inputs after method setup.
 
         :return: None
         :rtype: None
         """
-
         if hasattr(self, 'category'):
             self.is_valid(self.category, str)
 
@@ -19,9 +18,9 @@ class getAllPerms(Handler):
         """Setup required parameters.
 
         :param type category: category
+
         :return: None
         :rtype: None
         """
-
         if category:
             self.category = category

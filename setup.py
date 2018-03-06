@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyibsng",
-    version="1.2.3",
+    version="1.2.5",
     description="IBSng python driver",
     long_description=open("README.rst").read(),
     author="Parspooyesh Fanavar",

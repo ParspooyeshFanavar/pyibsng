@@ -1,10 +1,6 @@
 IBSng Python Driver
 ===================
-This library will provide you access on API of IBSng.
-
-..
-
-    **NOTE:** This project is under construction, some handlers work fine, but some others are under the development. 
+This library provides access on IBSng JSON-RPC API.
 
 Support
 =======

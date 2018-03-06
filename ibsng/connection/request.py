@@ -2,13 +2,17 @@
 
 This library prepares and send http request.
 """
+from requests.exceptions import ReadTimeout
+
+from ibsng.exception.connection import (ServerConnectionError,
+                                        ServerConnectionTimeout)
 from ibsng.util import hash
 
 
 class Request:
     """Request handler class."""
 
-    def __init__(self, server_addr, session):
+    def __init__(self, server_addr, session, timeout):
         """Request handler init.
 
         :param server_addr: connection string
@@ -18,6 +22,7 @@ class Request:
         """
         self._server_addr = server_addr
         self._session = session
+        self._timeout = timeout
 
     def send(self, method, **params):
         """Send request to the server.
@@ -34,7 +39,14 @@ class Request:
         """
         data = hash.serialize(dict(method=method, params=params))
         # Post request
-        result = self._session.post(url=self._server_addr, data=data)
+        try:
+            result = self._session.post(url=self._server_addr,
+                                        data=data, timeout=self._timeout)
+        except ReadTimeout:
+            raise ServerConnectionTimeout()
+        except Exception as e:
+            raise ServerConnectionError(e)
+
         # Convert server response to object
         try:
             return hash.deserialize(result.text)

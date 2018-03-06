@@ -18,7 +18,7 @@ from ibsng.util import hash
 class Connection:
     """Connection handler class."""
 
-    def __init__(self, conn_str, **headers):
+    def __init__(self, conn_str, timeout=0.5, **headers):
         """Parse connection string and prepare session.
 
         :raises ValueError: raise ValueError when connection string is empty or
@@ -39,7 +39,8 @@ class Connection:
 
         self._session = Session().get_session()
         self._request = Request(self._server_url,
-                                self._session)
+                                self._session,
+                                timeout=timeout)
 
         self.handler = handler
 
@@ -53,9 +54,24 @@ class Connection:
         self._r_chain = []
 
         # update headers
-        self.update_headers(**headers)
+        self._update_headers(**headers)
 
-    def update_headers(self, **headers):
+    def _reset_variables(self, keep_chain=False):
+        """Reset required variables.
+
+        :param keep_chain: keep chain for debugging
+        :type keep_chain: bool
+
+        :return: None
+        :rtype: None
+        """
+        self._r_steps = 0
+        self._r_handler_name = None
+        self._r_method_name = None
+        if not keep_chain:
+            self._r_chain.clear()
+
+    def _update_headers(self, **headers):
         """Update headers.
 
         :param **headers: all required headers which should be overrided
@@ -90,10 +106,12 @@ class Connection:
                 tmp_params.update({k: v})
 
         # Call login.login method with parameters
-        action = self.call("login.login", **tmp_params)
+        action = self._call("login.login", **tmp_params)
         self._headers.update({"auth_session": action.get("result")})
         self._headers.update({"auth_name": self._auth_params["auth_name"]})
         self.clean_headers()
+        self._r_chain = []
+        self._r_handler_name = None
 
     def clean_headers(self):
         """Remove some headers after successful authentication.
@@ -106,7 +124,7 @@ class Connection:
         self._headers.pop('login_auth_pass', None)
         self._headers.pop('auth_pass', None)
 
-    def call(self, method, **params):
+    def _call(self, method, **params):
         """Send request to the server.
 
         :param method: API handler and method names
@@ -147,16 +165,11 @@ class Connection:
         tmp_headers.update(action.serialize())
 
         # It's time to call server method
-        result = self.call('{}.{}'.format(self._r_handler_name,
-                                          self._r_method_name),
-                           **tmp_headers)
+        result = self._call('{}.{}'.format(self._r_handler_name,
+                                           self._r_method_name),
+                            **tmp_headers)
 
-        # Reset required variables for next requests
-        self._r_steps = 0
-        self._r_handler_name = None
-        self._r_method_name = None
-        self._r_chain.clear()
-
+        self._reset_variables()
         action.outcome(result)
         json_result = result
         result = hash.dict_to_object(result)
@@ -187,9 +200,7 @@ class Connection:
             self._r_method_name = api_name
             self._r_method_module_name = string.camel_to_snake(api_name)
         else:
-            self._r_handler_name = None
-            self._r_method_name = None
-            self._r_steps = 0
+            self._reset_variables(True)
             raise general_exception.ChainFormatError(self._r_chain)
 
         self._r_steps += 1

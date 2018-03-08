@@ -17,27 +17,36 @@ Pyibsng is accessible by `pip`.
 
 Get Started
 ===========
+Getting started document_.
+
+.. _document: https://github.com/ParspooyeshFanavar/pyibsng/blob/master/docs/get-started.md
+
 To start using this library we need to import `IBSng` package:
 
-.. code-block:: pycon
+.. code-block:: python
 
     from ibsng import IBSng
 
 
 Test Authentication:
 
-.. code-block:: pycon
+.. code-block:: python
 
     con = IBSng("user:password@http://ip:port")
     con.auth()
 
 Get all charge info:
 
-.. code-block:: pycon
+.. code-block:: python
 
     charges = con.charge.getChargeInfo("sample1")
     print(charges.result)
     print(charges.json)
+
+
+To have list of all handlers and methods, checkout handlers.xml_.
+
+.. _handlers.xml: https://github.com/ParspooyeshFanavar/pyibsng/blob/master/docs/handlers.xml
 
 
 Current Handler Support
@@ -109,3 +118,7 @@ Incompleted sections:
 Contribute
 ==========
 If you find a bug or have an update, kindly create an issue in github page and send us a pull request.
+
+To write new module, checkout write-module_ document.
+
+.. _write-module: https://github.com/ParspooyeshFanavar/pyibsng/blob/master/docs/write-module.md

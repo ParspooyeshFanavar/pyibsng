@@ -27,7 +27,7 @@ This is the pattern: `con.<HANDLER_NAME>.<METHOD_NAME>(*args, **kwargs)`
 
 Each method has it's own behaviour and parameters. To get more info about each one, try to read docstring of each method.
 
-For example `searchUser`:
+For example ``searchUser``:
 
 .. code-block:: python
 

@@ -19,7 +19,7 @@ Note: method name is in camel-case style, also first word must be small.
 	$ touch search_book.py
 	$ touch get_all_books_i_d.py
 
-Note: when you want to mention that a word is upper case, the add an underscore before it. for example `_i_d` will be considerd as `ID` in framework. so if your method is `getAll` then its python file name must be `get_all`.
+**Note:** when you want to mention that a word is upper case, the add an underscore before it. for example `_i_d` will be considerd as `ID` in framework. so if your method is `getAll` then its python file name must be `get_all`.
 
 
 ``search_book.py``:
@@ -65,6 +65,6 @@ Note: when you want to mention that a word is upper case, the add an underscore 
 
         pass
 
-Note: every method which have arguments, should contain `setup` method in its class.
+**Note:** every method which have arguments, should contain `setup` method in its class.
 
-Note: if you want to validate arguments before sending to the sever, you should consider `control` method in your class.
+**Note:** if you want to validate arguments before sending to the sever, you should consider `control` method in your class.

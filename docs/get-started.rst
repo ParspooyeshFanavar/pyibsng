@@ -16,7 +16,7 @@ After installing the driver, then we are going to use it in our Python source co
 
 To call handler/method (after authentication):
 
-This is the pattern: `con.<HANDLER_NAME>.<METHOD_NAME>(*args, **kwargs)`
+This is the pattern: ``con.<HANDLER_NAME>.<METHOD_NAME>(*args, **kwargs)``
 
 .. code-block:: python
 

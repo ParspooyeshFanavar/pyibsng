@@ -136,6 +136,7 @@ class Connection:
         :rtype: object
         """
         action = self._request.send(method, **params)
+        self._reset_variables()
         if action.get("error"):
             raise response_exception.throw_exception(action["error"])
         return action
@@ -169,7 +170,6 @@ class Connection:
                                            self._r_method_name),
                             **tmp_headers)
 
-        self._reset_variables()
         action.outcome(result)
         json_result = result
         result = hash.dict_to_object(result)

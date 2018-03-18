@@ -19,7 +19,7 @@ Get Started
 ===========
 Getting started document_.
 
-.. _document: https://github.com/ParspooyeshFanavar/pyibsng/blob/master/docs/get-started.md
+.. _document: https://github.com/ParspooyeshFanavar/pyibsng/blob/master/docs/get-started.rst
 
 To start using this library we need to import `IBSng` package:
 
@@ -121,4 +121,4 @@ If you find a bug or have an update, kindly create an issue in github page and s
 
 To write new module, checkout write-module_ document.
 
-.. _write-module: https://github.com/ParspooyeshFanavar/pyibsng/blob/master/docs/write-module.md
+.. _write-module: https://github.com/ParspooyeshFanavar/pyibsng/blob/master/docs/write-module.rst
